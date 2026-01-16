@@ -146,3 +146,370 @@ label{ display:block; font-size:14px; color:var(--txt-dim); margin-bottom:6px; }
 /* Accessibility */
 :focus-visible{ outline:2px dashed #93c5fd; outline-offset:3px; }
 .input:focus-visible{ outline: none; }
+
+/* Dashboard Styles */
+.dashboard-nav {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 50;
+  margin-top: 0.5rem;
+  width: 12rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: var(--txt);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-divider {
+  height: 1px;
+  margin: 0.25rem 0;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Logout item styling */
+.logout-item {
+  color: #ef4444 !important;
+  font-weight: 500 !important;
+}
+
+.logout-item:hover {
+  background: rgba(239, 68, 68, 0.1) !important;
+  color: #dc2626 !important;
+}
+
+/* Top Navigation Bar */
+.topbar {
+  width: 100%;
+  padding: 18px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px) saturate(130%);
+  border-bottom: 1px solid var(--glass-stroke);
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  font-size: 15px;
+}
+
+.nav-links button {
+  color: var(--txt-dim);
+  text-decoration: none;
+  transition: .2s;
+}
+
+.nav-links button.active {
+  color: var(--txt);
+  font-weight: 500;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .topbar {
+    padding: 12px 16px;
+  }
+  
+  .nav-links {
+    gap: 16px;
+    font-size: 14px;
+  }
+  
+  .nav-actions {
+    gap: 8px;
+  }
+  
+  .badge-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    gap: 8px;
+    font-size: 12px;
+  }
+  
+  .nav-links button {
+    padding: 4px 8px;
+  }
+  
+  .badge-btn {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+}
+
+/* Hamburger Menu */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--txt);
+  font-size: 20px;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.hamburger-btn:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+.mobile-menu-content {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px) saturate(125%);
+  border: 1px solid var(--glass-stroke);
+  border-radius: 22px;
+  width: 90%;
+  max-width: 320px;
+  box-shadow: 0 14px 34px var(--glass-shadow);
+  overflow: hidden;
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.mobile-menu-header h3 {
+  margin: 0;
+  color: var(--txt);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.mobile-nav-links {
+  padding: 8px 0;
+}
+
+.mobile-nav-link {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 12px 20px;
+  font-size: 16px;
+  color: var(--txt-dim);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mobile-nav-link:hover {
+  background: rgba(255,255,255,0.1);
+  color: var(--txt);
+}
+
+.mobile-nav-link.active {
+  color: var(--txt);
+  background: rgba(255,255,255,0.15);
+  font-weight: 500;
+}
+
+.mobile-menu-actions {
+  padding: 16px 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-action-btn {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 10px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: var(--txt);
+  text-align: left;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.mobile-action-btn:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+.mobile-logout-btn {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+
+.mobile-logout-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: block;
+  }
+  
+  .desktop-nav {
+    display: none;
+  }
+}
+
+.badge-btn {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 8px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: var(--txt);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.35);
+}
+
+/* Dashboard grid */
+.dashboard-container {
+  width: min(1200px, 92vw);
+  margin: 40px auto;
+  display: grid;
+  gap: 24px;
+}
+
+.welcome {
+  padding: 34px 38px;
+}
+
+.welcome h1 {
+  margin: 0 0 8px;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.stat-card {
+  padding: 32px;
+  text-align: left;
+}
+
+.stat-card h2 {
+  font-size: 42px;
+  margin: 0 0 6px;
+  font-weight: 600;
+}
+
+.actions-card, .expiring-card {
+  padding: 32px;
+}
+
+.quick-actions {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.exp-item {
+  padding: 18px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.exp-item-info p {
+  margin: 6px 0 0;
+  color: var(--txt-dim);
+  font-size: 14px;
+}
+
+/* Notification Badge */
+.notification-badge {
+  position: absolute;
+  top: -0.25rem;
+  right: -0.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.25rem;
+  width: 1.25rem;
+  border-radius: 9999px;
+  background: #ef4444;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu {
+    display: block;
+  }
+  
+  .desktop-menu {
+    display: none;
+  }
+}
