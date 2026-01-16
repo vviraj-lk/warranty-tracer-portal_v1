@@ -1,0 +1,18 @@
+# Node (Frontend)
+portal-web/node_modules/
+portal-web/build/
+dist/
+build/
+
+# Laravel (Backend)
+portal-api/vendor/
+portal-api/.env
+storage/*.key
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+public/storage
+
+# System
+.DS_Store
+Thumbs.db
