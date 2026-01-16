@@ -35,6 +35,10 @@ const Dashboard = () => {
     fetchDashboard();
   }, [isAuthenticated, navigate]);
 
+  useEffect(() => {
+    document.title = 'Warranty Tracer - Dashboard';
+  }, []);
+
   const handleLogout = async () => {
     await logout();
     navigate('/login');

@@ -81,7 +81,7 @@ label{ display:block; font-size:14px; color:var(--txt-dim); margin-bottom:6px; }
   padding:12px 38px 12px 10px; transition:border-color .2s ease;
 }
 .input::placeholder{ color:rgba(255,255,255,0.45); }
-.input:focus{ border-bottom-color: var(--accent); }
+.input:focus{ border-bottom-color: var(--accent); outline: none; }
 
 .icon-right{
   position:absolute; right:6px; top:50%; transform:translateY(-50%);
@@ -145,3 +145,4 @@ label{ display:block; font-size:14px; color:var(--txt-dim); margin-bottom:6px; }
 
 /* Accessibility */
 :focus-visible{ outline:2px dashed #93c5fd; outline-offset:3px; }
+.input:focus-visible{ outline: none; }

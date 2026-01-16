@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -25,6 +25,10 @@ const Auth = () => {
 
   const { login, register } = useAuth();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = isSignIn ? 'Warranty Tracer - Login' : 'Warranty Tracer - Sign Up';
+  }, [isSignIn]);
 
   const showSignIn = () => {
     setIsSignIn(true);
@@ -126,6 +130,13 @@ const Auth = () => {
             >
               Sign Up
             </button>
+          </div>
+
+          <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+            <h1 style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--txt)', margin: '0' }}>Warranty Tracer Portal</h1>
+            <p style={{ fontSize: '14px', color: 'var(--txt-dim)', margin: '5px 0 0' }}>
+              {isSignIn ? 'Secure access to your warranty management system' : 'Join our warranty tracking platform'}
+            </p>
           </div>
 
           <h3 id="auth-title">{isSignIn ? 'SIGN IN' : 'SIGN UP'}</h3>
