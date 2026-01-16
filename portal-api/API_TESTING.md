@@ -1,8 +1,23 @@
-# API Testing Guide
+# Warranty Tracer Portal - API Testing Guide
+
+Complete guide for testing the Laravel backend API endpoints.
 
 ## Base URL
 ```
 http://localhost:8000/api
+```
+
+## Important Headers
+
+For all requests, include:
+```
+Accept: application/json
+Content-Type: application/json
+```
+
+For authenticated requests, also include:
+```
+Authorization: Bearer {your_token}
 ```
 
 ## 1. Register a New User
