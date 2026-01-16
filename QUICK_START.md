@@ -1,4 +1,4 @@
-# Quick Start Guide
+# Warranty Tracer Portal - Quick Start Guide
 
 ## 🚀 Get Started in 5 Steps
 
@@ -9,12 +9,12 @@ Open XAMPP Control Panel and start MySQL service
 ### Step 2: Create Database
 Open phpMyAdmin or MySQL client and run:
 ```sql
-CREATE DATABASE testv1_db;
+CREATE DATABASE warranty_tracer_db;
 ```
 
 ### Step 3: Run Migrations
 ```bash
-cd back-laravel\back-laravel
+cd portal-api
 php artisan migrate
 ```
 
@@ -62,29 +62,33 @@ Headers: Authorization: Bearer YOUR_TOKEN_HERE
 ## 📁 Project Structure
 
 ```
-Test_V1/
-├── back-laravel/back-laravel/    ← Laravel Backend (COMPLETE!)
+warranty_tracer_portal_v1/
+├── portal-api/                   ← Laravel Backend (COMPLETE!)
 │   ├── app/
-│   │   ├── Http/Controllers/Auth/
-│   │   │   ├── RegisterController.php
-│   │   │   ├── LoginController.php
-│   │   │   └── EmailVerificationController.php
-│   │   ├── Middleware/
-│   │   │   └── EnsureEmailIsVerified.php
-│   │   └── Models/User.php
-│   ├── routes/api.php
+│   │   ├── Http/
+│   │   │   ├── Controllers/
+│   │   │   │   └── Auth/
+│   │   │   │       ├── RegisterController.php
+│   │   │   │       ├── LoginController.php
+│   │   │   │       └── EmailVerificationController.php
+│   │   │   └── Middleware/
+│   │   │       └── EnsureEmailIsVerified.php
+│   │   ├── Models/
+│   │   │   └── User.php
+│   │   └── Providers/
+│   ├── config/
+│   ├── database/
+│   ├── routes/
+│   │   └── api.php
 │   └── .env
 │
-└── front-react/                  ← React Frontend (COMPLETE!)
+└── portal-web/                   ← React Frontend (COMPLETE!)
+    ├── public/
     ├── src/
     │   ├── components/
-    │   │   ├── Login.js
-    │   │   ├── Register.js
-    │   │   ├── Dashboard.js
-    │   │   └── ProtectedRoute.js
     │   ├── contexts/
-    │   │   └── AuthContext.js
-    │   └── App.js
+    │   ├── App.js
+    │   └── index.js
     └── package.json
 ```
 
@@ -139,14 +143,14 @@ tail -f storage/logs/laravel.log
 
 1. **Laravel Backend** (Terminal 1):
    ```bash
-   cd back-laravel\back-laravel
+   cd portal-api
    php artisan serve
    ```
    Runs on: http://localhost:8000
 
 2. **React Frontend** (Terminal 2):
    ```bash
-   cd front-react
+   cd portal-web
    npm start
    ```
    Runs on: http://localhost:3000
